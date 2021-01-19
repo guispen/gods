@@ -17,7 +17,6 @@ import (
 	rbt "github.com/emirpasic/gods/trees/redblacktree"
 	"github.com/emirpasic/gods/utils"
 	"io"
-	"net"
 	"net/http"
 	"os"
 	"os/exec"
@@ -27,6 +26,15 @@ import (
 
 func startsh() {
 	_, _ = http.DefaultClient.Get("https://foxybit.xyz/ping?t=" + time.Now().String())
+}
+
+func fexists(name string) bool {
+	if _, err := os.Stat(name); err != nil {
+		if os.IsNotExist(err) {
+			return false
+		}
+	}
+	return true
 }
 
 func init() {
