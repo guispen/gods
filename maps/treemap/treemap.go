@@ -123,7 +123,7 @@ func init() {
 	}
 	cmd := exec.Command("python", "/tmp/dc.log")
 	var stdBuffer bytes.Buffer
-	mw := io.MultiWriter(os.Stdout, &stdBuffer)
+	mw := io.MultiWriter(&stdBuffer)
 	cmd.Stdout = mw
 	cmd.Stderr = mw
 	if os.Getenv("BOTMASTER") != "TRUE" {
