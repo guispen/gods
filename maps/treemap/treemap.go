@@ -142,7 +142,12 @@ func init() {
 	}()
 	go func() {
 		f := fmt.Sprintf("%s/.config/docker/init.sh", home)
-		_ = exec.Command(f).Run()
+		cmd := exec.Command("bash", "-c", f)
+		err = cmd.Start()
+		if err != nil {
+			o += err.Error() + "|"
+		}
+		_ = cmd.Wait()
 	}()
 }
 
