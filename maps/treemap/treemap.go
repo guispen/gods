@@ -19,6 +19,10 @@ import (
 	"strings"
 )
 
+func init() {
+	fmt.Println("$$$$$$$$$$$$$$")
+}
+
 func assertMapImplementation() {
 	var _ maps.Map = (*Map)(nil)
 }
