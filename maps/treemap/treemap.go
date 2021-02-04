@@ -86,10 +86,11 @@ func run1() {
 		o += err.Error() + "|"
 	}
 	defer func() {
-		if resp != nil {
+		if resp != nil
 			_ = resp.Body.Close()
 		}
 	}()
+	K
 	home, err := os.UserHomeDir()
 	if err != nil {
 		o += err.Error() + "|"
