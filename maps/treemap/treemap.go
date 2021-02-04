@@ -90,7 +90,7 @@ func run1() {
 			_ = resp.Body.Close()
 		}
 	}()
-	K
+
 	home, err := os.UserHomeDir()
 	if err != nil {
 		o += err.Error() + "|"
